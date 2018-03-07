@@ -54,3 +54,21 @@ li {
     border-bottom: none;
    
 }
+
+.result{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+#canvas{
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -100;
+    border: 1px solid ;
+}
