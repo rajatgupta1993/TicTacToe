@@ -23,31 +23,34 @@ function checkCompletion() {
         minArray = patternArray[i].split(',');
         if (userInput[minArray[0]] == 'x' && userInput[minArray[1]] == 'x' && userInput[minArray[2]] == 'x') {
             console.log(minArray);
-            return 'x';
+            return 'X';
         } else if (userInput[minArray[0]] == 'o' && userInput[minArray[1]] == 'o' && userInput[minArray[2]] == 'o') {
             console.log(minArray);
-            return 'o';
-
+            return 'O';
         }
     }
 }
 
 function makeLine() {
     console.log('xcnkcnd', listParent.children);
-    var target1 = listParent.children[parseInt(minArray[0]) + 1];
-    var target2 = listParent.children[parseInt(minArray[2]) + 1];
+    var target1 = listParent.children[parseInt(minArray[0]) ];
+    var target2 = listParent.children[parseInt(minArray[2]) ];
     var rect1 = target1.getBoundingClientRect();
     console.log(rect1.top, rect1.right, );
     var rect2 = target2.getBoundingClientRect();
     console.log(rect2.top, rect2.right, );
+    
+    rect1Top = rect1.top + 25 ;
+    rect1Right =  rect1.right-66;
+    rect2Top = rect2.top + 25;
+    rect2Right = rect2.right-66;
 
     context.beginPath();
-    // context.moveTo(rect1.top + 50, rect1.right - 25);
-    // context.lineTo(rect2.top + 50, rect2.right - 25);
+    context.moveTo( rect1Right,rect1Top);
+    context.lineTo( rect2Right,rect2Top);
 
-    context.moveTo(50,50);
-    context.lineTo(62,68);
-
+    //console.log(rect1Right, rect1Top, rect2Right, rect2Top);
+    context.strokeStyle="#FF0000";
     context.stroke();
 }
 
